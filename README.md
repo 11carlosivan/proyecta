@@ -66,19 +66,36 @@
 
 ## 📦 Instalación
 
-### Requisitos Previos
+### 🚀 Instalación Rápida (Hosting Web)
+
+**¿Quieres instalarlo en tu hosting? ¡Es muy fácil!**
+
+1. **Descarga** el proyecto desde GitHub (botón "Code" → "Download ZIP")
+2. **Sube** los archivos a tu hosting (vía cPanel o FTP)
+3. **Crea** una base de datos MySQL en tu hosting
+4. **Visita** `http://tu-dominio.com/install.php`
+5. **Sigue** el asistente de instalación (5 pasos)
+6. **¡Listo!** Ya puedes usar PROYECTA
+
+📖 **[Ver Guía Completa de Instalación](INSTALLATION.md)** con capturas de pantalla y solución de problemas.
+
+---
+
+### 💻 Instalación Local (Desarrollo)
+
+#### Requisitos Previos
 
 - PHP 8.0 o superior
 - MySQL 8.0 o MariaDB 10.5+
 - Apache (o cualquier servidor web compatible con PHP)
 - Composer (opcional, para futuras dependencias)
 
-### Pasos de Instalación
+#### Pasos de Instalación
 
 1. **Clonar el repositorio**
 ```bash
-git clone https://github.com/TU_USUARIO/PROYECTA.git
-cd PROYECTA
+git clone https://github.com/11carlosivan/proyecta.git
+cd proyecta
 ```
 
 2. **Configurar la base de datos**
@@ -87,46 +104,43 @@ cd PROYECTA
 mysql -u root -p
 CREATE DATABASE proyecta_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 exit;
-
-# Importar el esquema
-mysql -u root -p proyecta_db < database/schema.sql
 ```
 
-3. **Configurar la conexión a la base de datos**
+3. **Ejecutar el instalador web**
+```
+http://localhost/proyecta/install.php
+```
+
+O si prefieres hacerlo manualmente:
+
 ```bash
 # Copiar el archivo de configuración de ejemplo
 cp config/database.example.php config/database.php
 
 # Editar config/database.php con tus credenciales
+# Luego importar el esquema
+mysql -u root -p proyecta_db < database/schema.sql
 ```
 
-4. **Ejecutar migraciones**
-```bash
-php setup_task_features.php
-php setup_activity.php
-```
-
-5. **Configurar permisos**
+4. **Configurar permisos**
 ```bash
 chmod 755 uploads/
-chmod 755 sessions/
+chmod 755 config/
 ```
 
-6. **Acceder a la aplicación**
+5. **Acceder a la aplicación**
 ```
-http://localhost/PROYECTA
+http://localhost/proyecta
 ```
 
 ### Usuario por Defecto
 
-Después de la instalación, puedes crear un usuario administrador ejecutando:
+Si usaste el instalador web, habrás creado tu propio usuario administrador.
+
+Si importaste manualmente, puedes crear uno ejecutando:
 ```bash
 php database/create_admin.php
 ```
-
-O usar las credenciales por defecto (si están en el seed):
-- **Email:** admin@proyecta.com
-- **Contraseña:** admin123
 
 ## 📁 Estructura del Proyecto
 
