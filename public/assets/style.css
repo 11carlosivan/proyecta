@@ -1,0 +1,235 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --bg-color: #f3f4f6;
+    --text-color: #1f2937;
+    --white: #ffffff;
+    --danger: #ef4444;
+    --success: #10b981;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.auth-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-container {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-secondary {
+    background-color: #6b7280;
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.navbar {
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.main-container {
+    display: flex;
+    height: calc(100vh - 64px);
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--white);
+    border-right: 1px solid #e5e7eb;
+    padding: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 4px;
+}
+
+.sidebar li a:hover {
+    background-color: #f3f4f6;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.error {
+    color: var(--danger);
+}
+
+.success {
+    color: var(--success);
+}
+
+/* Kanban Board */
+.board-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 2rem;
+    height: calc(100vh - 80px);
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.kanban-column {
+    background-color: #e5e7eb;
+    min-width: 300px;
+    width: 300px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.column-header {
+    padding: 1rem;
+    background-color: #d1d5db;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+.column-body {
+    padding: 0.5rem;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 100px;
+}
+
+.task-card {
+    background-color: var(--white);
+    padding: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+    cursor: grab;
+}
+
+.task-card.dragging {
+    opacity: 0.5;
+}
+
+.task-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.type.bug {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.type.task {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.add-task-form {
+    padding: 0.5rem;
+}
+
+.add-task-form input {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+}
+
+.add-task-form input:focus {
+    background: var(--white);
+    outline: none;
+}

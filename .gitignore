@@ -1,0 +1,51 @@
+# Archivos de configuración sensibles
+config/database.php
+
+# Archivos temporales y de caché
+*.log
+*.tmp
+*.cache
+.DS_Store
+Thumbs.db
+
+# Directorios de uploads y archivos de usuario
+uploads/*
+!uploads/.gitkeep
+
+# Archivos de sesión de PHP
+sessions/*
+!sessions/.gitkeep
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de sistema
+*.swp
+*.swo
+*~
+
+# Node modules (si usas npm en el futuro)
+node_modules/
+
+# Archivos de backup
+*.bak
+*.backup
+*.old
+
+# Archivos de debug y testing
+debug_*.php
+test_*.php
+verify_*.php
+setup_*.php
+fix_*.php
+create_*.php
+
+# Logs de Apache/XAMPP
+error.log
+access.log
+
+# Archivos específicos del proyecto que no deben subirse
+.antigravityignore

@@ -1,0 +1,27 @@
+# PROYECTA - Configuración para XAMPP local
+
+# Habilitar mod_rewrite
+RewriteEngine On
+
+# Si estás en un subdirectorio, usa esta línea
+# RewriteBase /proyecta/
+
+# Redireccionar URLs amigables
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+# Proteger archivos sensibles
+<FilesMatch "\.(env|log|ini)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Configurar índice por defecto
+DirectoryIndex index.php
+
+# Permitir acceso a archivos .css y .js
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
