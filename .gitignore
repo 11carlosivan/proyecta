@@ -35,11 +35,10 @@ node_modules/
 *.backup
 *.old
 
-# Archivos de debug y testing
+# Archivos de debug y testing temporales
 debug_*.php
 test_*.php
 verify_*.php
-setup_*.php
 fix_*.php
 create_*.php
 
